@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AgmCoreModule } from '@agm/core';
 import { MapStateComponent } from './map-state/map-state.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MapStateComponent } from './map-state/map-state.component';
     ReactiveFormsModule,
     MatInputModule,
     MatSlideToggleModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6qbe4hUmf8zB4TZqAtZc02Npu0h75ysY'
     }),

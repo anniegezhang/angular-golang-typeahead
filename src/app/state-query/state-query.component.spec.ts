@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StateQueryComponent } from './state-query.component';
+import { StateInfo, StateQueryComponent } from './state-query.component';
 
 describe('StateQueryComponent', () => {
   let component: StateQueryComponent;
-  let fixture: ComponentFixture<StateQueryComponent>;
+  let fixture: ComponentFixture<StateQueryComponent>; 
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

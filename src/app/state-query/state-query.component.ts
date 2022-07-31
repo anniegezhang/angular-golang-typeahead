@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { AppComponent } from '../app.component';
 
-export interface User {
+export interface StateInfo {
   name: string;
 }
 
@@ -17,8 +16,8 @@ export interface User {
   styleUrls: ['./state-query.component.css']
 })
 export class StateQueryComponent implements OnInit {
-  myControl = new FormControl<string | User>('');
-  options: User[] = [{name: 'Alabama (AL)'},
+  myControl = new FormControl<string | StateInfo>('');
+  options: StateInfo[] = [{name: 'Alabama (AL)'},
   {name: 'Alaska (AK)'},
   {name: 'Arizona (AZ)'},
   {name: 'Arkansas (AR)'},
@@ -74,7 +73,7 @@ export class StateQueryComponent implements OnInit {
   {name: 'Northern Mariana Islands (MP)'},
   {name: 'Puerto Rico (PR)'},
   {name: 'Virgin Islands (VI)'}, ];
-  filteredOptions: Observable<User[]>;
+  filteredOptions: Observable<StateInfo[]>;
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -86,11 +85,11 @@ export class StateQueryComponent implements OnInit {
     );
   }
 
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
+  displayFn(stateInfo: StateInfo): string {
+    return stateInfo && stateInfo.name ? stateInfo.name : '';
   }
 
-  private _filter(name: string): User[] {
+  private _filter(name: string): StateInfo[] {
     const filterValue = name.toLowerCase();
 
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
