@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-golang-typeahead';
+  lat = 44.5;
+  lng = -89.5;
 }

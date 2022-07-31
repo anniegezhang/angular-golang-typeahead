@@ -12,10 +12,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
+import { AgmCoreModule } from '@agm/core';
+import { MapStateComponent } from './map-state/map-state.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    StateQueryComponent
+    StateQueryComponent,
+    MapStateComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     FormsModule, 
     ReactiveFormsModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB6qbe4hUmf8zB4TZqAtZc02Npu0h75ysY'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
